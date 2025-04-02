@@ -1,0 +1,438 @@
+:root {
+    --bg-color: #F0F2F5; /* Slightly off-white background */
+    --sidebar-bg: #F0F2F5; /* Same as main bg */
+    --card-bg: #FFFFFF; /* White for sidebar cards */
+    --project-card-dark-bg: #1A202C; /* Dark grey/blue for project cards */
+    --project-card-pink-bg: #FDF2F8; /* Light pink */
+    --project-card-green-bg: #F0FDF4; /* Light green */
+    --text-color: #1F2937; /* Darkest Gray / Near Black */
+    --secondary-text-color: #6B7280; /* Medium Gray */
+    --accent-color: #4A5568; /* Mid Gray-Blue */
+    --tab-active-bg: #333; /* Dark background for active tab */
+    --tab-active-text: #FFFFFF;
+    --tab-inactive-bg: #E2E8F0;
+    --tab-inactive-text: #4A5568;
+    --border-color: #E2E8F0; /* Light border color */
+    --link-color: #3182CE; /* Blue for links */
+    --status-dot-active: #34D399; /* Green dot */
+
+    --font-family: 'Inter', sans-serif;
+    --transition-speed: 0.3s ease;
+    --border-radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 0; /* Remove default body padding */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/* Main Layout Container */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Fixed sidebar, flexible main content */
+    gap: 2rem; /* Gap between sidebar and main */
+    max-width: 1400px;
+    margin: 2rem auto; /* Center container with margin */
+    padding: 0 1rem; /* Padding on smaller screens */
+}
+
+/* Generic Card Style */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    /* Sidebar sticks if needed, requires more complex layout */
+}
+
+.profile-card .profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    /* Add background pattern like in image if desired */
+}
+
+.profile-card .profile-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.profile-card .profile-description {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.profile-card .social-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.profile-card .social-icons a {
+    color: var(--secondary-text-color);
+    transition: color var(--transition-speed);
+}
+
+.profile-card .social-icons a:hover {
+    color: var(--text-color);
+}
+
+.profile-card .sidebar-contact-icon {
+    margin-left: auto; /* Push headset icon to the right */
+    background-color: #e9ecef; /* Light grey background */
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-card .sidebar-contact-icon i {
+    font-size: 0.9rem;
+}
+
+/* Work History */
+.work-history .sidebar-section-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.history-item {
+    border-bottom: 1px solid var(--border-color);
+}
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-summary {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    list-style: none; /* Remove default marker */
+    position: relative;
+    gap: 0.75rem;
+}
+.history-summary::-webkit-details-marker {
+    display: none; /* Hide default arrow */
+}
+
+.history-icon-wrapper {
+    background-color: #e9ecef; /* Icon background */
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.history-icon {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.history-role {
+    font-weight: 500;
+    font-size: 0.95rem;
+    flex-grow: 1; /* Take available space */
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: transparent; /* Default: no dot */
+    margin-left: 0.5rem;
+}
+.status-dot.active {
+    background-color: var(--status-dot-active);
+}
+
+.history-toggle {
+    font-size: 0.8rem;
+    color: var(--secondary-text-color);
+    margin-left: auto;
+    transition: transform var(--transition-speed);
+}
+
+.history-item[open] > .history-summary .history-toggle {
+    transform: rotate(180deg);
+}
+
+.history-details {
+    padding: 0 0.5rem 1rem 3rem; /* Indent details */
+    font-size: 0.85rem;
+    color: var(--secondary-text-color);
+}
+.history-details p {
+    margin-top: 0.5rem;
+}
+.history-details a {
+    font-weight: 500;
+}
+.history-details a i {
+    font-size: 0.7rem;
+    margin-left: 0.25rem;
+}
+
+/* Main Content Area */
+.main-content {
+    /* No specific background needed, uses body bg */
+}
+
+.main-title {
+    font-size: 1.75rem; /* 28px */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--tab-inactive-bg);
+    color: var(--tab-inactive-text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.tab-button:hover {
+    background-color: #d1d5db; /* Slightly darker inactive */
+}
+
+.tab-button.active {
+    background-color: var(--tab-active-bg);
+    color: var(--tab-active-text);
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Slightly smaller gap */
+}
+
+.project-card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    position: relative; /* For absolute positioning inside */
+    color: var(--text-color); /* Default text color */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific Project Card Styles from Image */
+.project-card.dark-card {
+    background-color: var(--project-card-dark-bg);
+    color: #E2E8F0; /* Light text on dark background */
+}
+.project-card.pink-card {
+    background-color: var(--project-card-pink-bg);
+}
+.project-card.green-card {
+    background-color: var(--project-card-green-bg);
+}
+
+.project-image {
+    width: 100%;
+    height: auto; /* Adjust height as needed or use aspect-ratio */
+    /* height: 300px; */
+    /* object-fit: cover; */
+    transition: transform var(--transition-speed);
+    border-radius: var(--border-radius);
+}
+
+.project-card:hover .project-image {
+     transform: scale(1.03);
+}
+
+/* Optional card header */
+.card-header {
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--secondary-text-color); /* Default header text */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+
+.project-card:hover .card-header {
+    opacity: 1;
+}
+
+.project-card.dark-card .card-header {
+    color: #A0AEC0; /* Lighter secondary text on dark cards */
+    background-color: rgba(45, 55, 72, 0.7); /* Darker semi-transparent */
+}
+
+.card-tag {
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.card-tag.work {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+.card-tag.experiment {
+    background-color: #D1D5DB;
+    color: var(--text-color);
+}
+/* Specific experiment tag colors if needed */
+.project-card.pink-card .card-tag.experiment {
+     background-color: #FBCFE8; /* Light Pink */
+}
+.project-card.green-card .card-tag.experiment {
+     background-color: #A7F3D0; /* Light Green */
+}
+
+/* Footer */
+.footer {
+    grid-column: 1 / -1; /* Span both columns */
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--secondary-text-color);
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
+    .portfolio-container {
+        grid-template-columns: 250px 1fr; /* Smaller sidebar */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr; /* Stack columns */
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+
+    .sidebar {
+        /* Remove fixed width behavior */
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+     .filter-tabs {
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap; /* Allow tabs to wrap */
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .footer {
+         margin-top: 1rem;
+         padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 15px;
+    }
+
+     .card {
+        padding: 1rem;
+    }
+
+     .profile-card .profile-description {
+        font-size: 0.85rem;
+    }
+
+    .filter-tabs {
+        gap: 0.3rem;
+    }
+    .tab-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+     .history-details {
+        padding-left: 1rem; /* Reduce indent */
+    }
+} 

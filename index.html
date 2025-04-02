@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Masid - Product Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="portfolio-container">
+
+        <aside class="sidebar">
+            <div class="profile-card card">
+                <img src="https://via.placeholder.com/80x80/cccccc/1F2937?text=PM" alt="Pedro Masid" class="profile-picture">
+                <h1 class="profile-name">Pedro Masid</h1>
+                <p class="profile-description">
+                    Product designer with six years in the field and a strong foundation in software engineering, spanning industries such as incorporation, insurance, banking, and education.
+                </p>
+                <div class="social-icons">
+                    <a href="#" aria-label="X / Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    <a href="#" aria-label="Portfolio/Link"><i class="fas fa-link"></i></a>
+                    <a href="#" aria-label="Contact" class="sidebar-contact-icon"><i class="fas fa-headset"></i></a>
+                </div>
+            </div>
+
+            <div class="work-history card">
+                <h2 class="sidebar-section-title">Work History</h2>
+                <details class="history-item" open>
+                    <summary class="history-summary">
+                        <span class="history-icon-wrapper"><i class="fas fa-rocket history-icon"></i></span>
+                        <span class="history-role">Founding Designer</span>
+                        <span class="status-dot active"></span>
+                        <span class="history-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="history-details">
+                        jun 2023 - now • <a href="#" target="_blank" rel="noopener noreferrer">Gun.io <i class="fas fa-external-link-alt"></i></a>
+                        <p>Details about the role...</p>
+                    </div>
+                </details>
+                 <details class="history-item">
+                    <summary class="history-summary">
+                        <span class="history-icon-wrapper"><i class="fas fa-building history-icon"></i></span>
+                        <span class="history-role">Principal Designer</span>
+                         <span class="status-dot"></span>
+                        <span class="history-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="history-details">
+                       jun 2022 - jun 2023 • <a href="#" target="_blank" rel="noopener noreferrer">Firstbase <i class="fas fa-external-link-alt"></i></a>
+                       <p>Details about the role...</p>
+                    </div>
+                </details>
+                <details class="history-item">
+                     <summary class="history-summary">
+                        <span class="history-icon-wrapper"><i class="fas fa-lightbulb history-icon"></i></span>
+                        <span class="history-role">Product Designer</span>
+                         <span class="status-dot"></span>
+                        <span class="history-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="history-details">
+                       nov 2020 - jun 2022 • <a href="#" target="_blank" rel="noopener noreferrer">Creditas <i class="fas fa-external-link-alt"></i></a>
+                       <p>Details about the role...</p>
+                    </div>
+                </details>
+                 <details class="history-item">
+                     <summary class="history-summary">
+                         <span class="history-icon-wrapper"><i class="fas fa-code history-icon"></i></span>
+                        <span class="history-role">Software Engineer</span>
+                         <span class="status-dot"></span>
+                        <span class="history-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                     <div class="history-details">
+                        [Dates] • Company <a href="#" target="_blank" rel="noopener noreferrer">Link <i class="fas fa-external-link-alt"></i></a>
+                        <p>Details about the role...</p>
+                    </div>
+                </details>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2 class="main-title">Works</h2>
+            <div class="filter-tabs">
+                <button class="tab-button active" data-filter="all">All</button>
+                <button class="tab-button" data-filter="work">Work</button>
+                <button class="tab-button" data-filter="experiments">Experiments</button>
+            </div>
+
+            <div class="project-grid">
+                 <div class="project-card dark-card" data-category="work">
+                     <div class="card-header">
+                         <span>Talent profile</span>
+                         <span class="card-tag work">Work</span>
+                     </div>
+                     <img src="https://via.placeholder.com/600x400/2D3748/E2E8F0?text=Work+Project+1" alt="Work Project 1" class="project-image">
+                 </div>
+                 <div class="project-card dark-card" data-category="work">
+                      <div class="card-header">
+                         <span>Company Details</span>
+                         <span class="card-tag work">Work</span>
+                     </div>
+                     <img src="https://via.placeholder.com/600x400/4A5568/E2E8F0?text=Work+Project+2" alt="Work Project 2" class="project-image">
+                 </div>
+                 <div class="project-card pink-card" data-category="experiments">
+                      <div class="card-header">
+                          <span>A Place for Demons</span>
+                          <span class="card-tag experiment">Experiment</span>
+                     </div>
+                     <img src="https://via.placeholder.com/600x400/EC4899/FFFFFF?text=Experiment+1" alt="Experiment 1" class="project-image">
+                 </div>
+                 <div class="project-card green-card" data-category="experiments">
+                      <div class="card-header">
+                          <span>4 Timers</span>
+                          <span class="card-tag experiment">Experiment</span>
+                     </div>
+                     <img src="https://via.placeholder.com/600x400/10B981/FFFFFF?text=Experiment+2" alt="Experiment 2" class="project-image">
+                 </div>
+            </div>
+        </main>
+
+    </div>
+
+    <footer class="footer">
+         <p>&copy; 2024 Pedro Masid. Minimal footer.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
